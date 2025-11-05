@@ -21,7 +21,7 @@ This repository contains learning-based locomotion control research from OpenRob
 We test our codes under the following environment:
 
 - Ubuntu 22
-- NVIDIA Driver: 525.147.05
+- NVIDIA Driver: 570.195.03
 - CUDA 12.0
 - Python 3.8.20
 - PyTorch 2.3.1+cu121
