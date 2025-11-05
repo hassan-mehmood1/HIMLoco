@@ -1,3 +1,5 @@
+## Updated Repo for Customize Quadruped Learning
+This is an updated repository for customize Quadruped Robot Training (JAMAL). We have tested the code in Ubuntu 22 and Python 3.8
 ## Learning-based Locomotion Control from OpenRobotLab
 This repository contains learning-based locomotion control research from OpenRobotLab, currently including [Hybrid Internal Model](/projects/himloco/README.md) & [H-Infinity Locomotion Control](/projects/h_infinity/README.md).
 ## 🔥 News
@@ -18,32 +20,32 @@ This repository contains learning-based locomotion control research from OpenRob
 
 We test our codes under the following environment:
 
-- Ubuntu 20.04
+- Ubuntu 22
 - NVIDIA Driver: 525.147.05
 - CUDA 12.0
-- Python 3.7.16
-- PyTorch 1.10.0+cu113
+- Python 3.8.20
+- PyTorch 2.3.1+cu121
 - Isaac Gym: Preview 4
 
 1. Create an environment and install PyTorch:
 
-  - `conda create -n himloco python=3.7.16`
+  - `conda create -n himloco python=3.8.20`
   - `conda activate himloco`
-  - `pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
-
+  <!-- - `pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html` -->
+  - `conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia`
 2. Install Isaac Gym:
   - Download and install Isaac Gym Preview 4 from https://developer.nvidia.com/isaac-gym
   - `cd isaacgym/python && pip install -e .`
 
 3. Clone this repository.
-
-  - `git clone https://github.com/OpenRobotLab/HIMLoco.git`
+  - `cd`
+  - `git clone https://github.com/hassan-mehmood1/HIMLoco.git`
   - `cd HIMLoco`
 
 
 4. Install HIMLoco.
-  - `cd rsl_rl && pip install -e .`
-  - `cd ../legged_gym && pip install -e .`
+  - `cd ~/HIMLoco/rsl_rl && pip install -e .`
+  - `cd ~/HIMLoco/legged_gym && pip install -e .`
 
 **Note:** Please use legged_gym and rsl_rl provided in this repo, we have modefications on these repos.
 
@@ -51,11 +53,11 @@ We test our codes under the following environment:
 
 1. Train a policy:
 
-  - `cd legged_gym/legged_gym/scripts`
+  - `cd ~/HIMLoco/legged_gym/legged_gym/scripts`
   - `python train.py`
 
 2. Play and export the latest policy:
-  - `cd legged_gym/legged_gym/scripts`
+  - `cd ~/HIMLoco/legged_gym/legged_gym/scripts`
   - `python play.py`
 
 
