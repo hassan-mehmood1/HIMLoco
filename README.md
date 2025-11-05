@@ -46,6 +46,7 @@ We test our codes under the following environment:
 4. Install HIMLoco.
   - `cd ~/HIMLoco/rsl_rl && pip install -e .`
   - `cd ~/HIMLoco/legged_gym && pip install -e .`
+  - `pip install "numpy<1.24" pydelatin wandb tqdm opencv-python ipdb pyfqmr flask`
 
 **Note:** Please use legged_gym and rsl_rl provided in this repo, we have modefications on these repos.
 
