@@ -2,22 +2,22 @@ from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobot
 
 class JAMALRoughCfg( LeggedRobotCfg ):
     class init_state( LeggedRobotCfg.init_state ):
-        pos = [0.0, 0.0, 0.42] # x,y,z [m]
+        pos = [0.0, 0.0, 0.36] # x,y,z [m]
         default_joint_angles = { # = target angles [rad] when action = 0.0
             'FL_hip_joint': 0.1,   # [rad]
             'RL_hip_joint': 0.1,   # [rad]
             'FR_hip_joint': -0.1 ,  # [rad]
             'RR_hip_joint': -0.1,   # [rad]
 
-            'FL_thigh_joint': 0.9,     # [rad]
-            'RL_thigh_joint': 1.,   # [rad]
-            'FR_thigh_joint': 0.9,     # [rad]
-            'RR_thigh_joint': 1.,   # [rad]
+            'FL_thigh_joint': 0.793,     # [rad]
+            'RL_thigh_joint': 0.793,   # [rad]
+            'FR_thigh_joint': 0.793,     # [rad]
+            'RR_thigh_joint': 0.793,   # [rad]
 
-            'FL_calf_joint': -1.5,   # [rad]
-            'RL_calf_joint': -1.5,    # [rad]
-            'FR_calf_joint': -1.5,  # [rad]
-            'RR_calf_joint': -1.5,    # [rad]
+            'FL_calf_joint': -1.509,   # [rad]
+            'RL_calf_joint': -1.509,    # [rad]
+            'FR_calf_joint': -1.509,  # [rad]
+            'RR_calf_joint': -1.509,    # [rad]
         }
 
     class control( LeggedRobotCfg.control ):
@@ -40,34 +40,39 @@ class JAMALRoughCfg( LeggedRobotCfg ):
         penalize_contacts_on = ["thigh", "calf"]
         terminate_after_contacts_on = ["base"]
         self_collisions = 1 # 1 to disable, 0 to enable...bitwise filter
-  
+
+    class commands(LeggedRobotCfg.commands):
+        # Set all command ranges to zero
+        lin_vel_x = [-0.2, 0.2]
+        lin_vel_y = [-0.2, 0.2]
+        ang_vel_yaw = [-0.5, 0.5]
+        # heading_command = False
+        # resampling_time = 1000.0  # very infrequent resampling (effectively constant)
+
     class rewards( LeggedRobotCfg.rewards ):
         # /////////////////working rewards////////////////
-        # soft_dof_pos_limit = 0.9
-        # base_height_target = 0.35
+        soft_dof_pos_limit = 0.9
+        base_height_target = 0.35
         # //////////////////new rewards////////////////
-        base_height_target = 0.32       # set near your spawn/stance (0.35–0.42 is fine)
+        # base_height_target = 0.35      
         # only_positive_rewards = False   # let penalties teach!
         class scales( LeggedRobotCfg.rewards.scales ):
             # /////////////////working rewards////////////////
-            # torques = -0.0002
-            # dof_pos_limits = -12.0
+            torques = -0.0002
+            dof_pos_limits = -12.0
 
             # //////////////////new rewards////////////////
             # Height / posture stabilizers
-            base_height = -0.0         # was -0.; enable it
-            orientation = -0.5         # was -0.; penalize bad orientation (pitch/roll/yaw err)
-            # Motion smoothness
-            dof_vel   = -0.002         # was -0.; smooth joint velocities
-            dof_acc   = -2.5e-6        # 10× your value (was -2.5e-7)
-            action_rate = -0.02        # was -0.01; slow action changes
-            # Effort
-            torques = -0.0002          # was -1e-5; give effort some weight
-            termination = -0.05         # was -0.0; make falling clearly bad
-            # Gait shaping
+            base_height = -5.0         # was -0.; enable it
+            # orientation = -0.5         # was -0.; penalize bad orientation (pitch/roll/yaw err)
+            # # Effort
+            # torques = -0.0002          # was -1e-5; give effort some weight
+            # termination = -0.05         # was -0.0; make falling clearly bad
+            # # Gait shaping
             feet_air_time = 1.2      # was +1.0; reduce a lot to avoid pogo
-            # Optional (if your env supports it):
-            dof_pos_limits = -14.0
+            # # Optional (if your env supports it):
+            # dof_pos_limits = -14.0
+            stumble = -5.0
             
         
 
@@ -77,5 +82,10 @@ class JAMALRoughCfgPPO( LeggedRobotCfgPPO ):
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = ''
         experiment_name = 'rough_jamal'
+
+    # class policy:
+    #     actor_hidden_dims = [128, 64, 32]
+    #     critic_hidden_dims = [128, 64, 32]
+    #     activation = 'elu' # can be elu, relu, selu, crelu, lrelu, tanh, sigmoid
 
   
