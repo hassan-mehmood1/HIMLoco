@@ -2,17 +2,21 @@ from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobot
 
 class JAMALRoughCfg( LeggedRobotCfg ):
     class init_state( LeggedRobotCfg.init_state ):
-        pos = [0.0, 0.0, 0.36] # x,y,z [m]
+        pos = [0.0, 0.0, 0.40] # x,y,z [m]
         default_joint_angles = { # = target angles [rad] when action = 0.0
-            'FL_hip_joint': 0.1,   # [rad]
-            'RL_hip_joint': 0.1,   # [rad]
-            'FR_hip_joint': -0.1 ,  # [rad]
-            'RR_hip_joint': -0.1,   # [rad]
+            # 'FL_hip_joint': 0.0,   # [rad] was 0.1
+            # 'RL_hip_joint': 0.0,   # [rad]
+            # 'FR_hip_joint': -0.0 ,  # [rad]
+            # 'RR_hip_joint': -0.0,   # [rad]
+            'FL_hip_joint': -0.1,   # [rad] was 0.1
+            'RL_hip_joint': -0.1,   # [rad]
+            'FR_hip_joint': 0.1 ,  # [rad]
+            'RR_hip_joint': 0.1,   # [rad]
 
             'FL_thigh_joint': 0.793,     # [rad]
-            'RL_thigh_joint': 0.793,   # [rad]
+            'RL_thigh_joint': 0.593,   # [rad] was 0.793
             'FR_thigh_joint': 0.793,     # [rad]
-            'RR_thigh_joint': 0.793,   # [rad]
+            'RR_thigh_joint': 0.593,   # [rad] was 0.793
 
             'FL_calf_joint': -1.509,   # [rad]
             'RL_calf_joint': -1.509,    # [rad]
@@ -49,16 +53,16 @@ class JAMALRoughCfg( LeggedRobotCfg ):
             max_curriculum = 2.0
             num_commands = 4 # default: lin_vel_x, lin_vel_y, ang_vel_yaw, heading (in heading mode ang_vel_yaw is recomputed from heading error)
             resampling_time = 10. # time before command are changed[s]
-            heading_command = True # if true: compute ang vel command from heading error
+            # heading_command =True # if true: compute ang vel command from heading error
+            heading_command = False # if true: compute ang vel command from heading error
+            
             class ranges( LeggedRobotCfg.commands.ranges):
-                lin_vel_x = [-1.0, 1.0] # min max [m/s]
-                lin_vel_y = [-1.0, 1.0]   # min max [m/s]
-                ang_vel_yaw = [-3.14, 3.14]    # min max [rad/s]
+                lin_vel_x = [-1, 1] # min max [m/s]
+                # lin_vel_y = [-0.5, 0.5]   # min max [m/s]
+                # ang_vel_yaw = [-3.14, 3.14]    # min max [rad/s]
+                lin_vel_y = [0, 0]   # min max [m/s]
+                ang_vel_yaw = [0, 0]    # min max [rad/s]
                 heading = [-3.14, 3.14]
-
-                # lin_vel_x = [-0.2, 0.2]
-                # lin_vel_y = [-0.2, 0.2]
-                # ang_vel_yaw = [-0.5, 0.5]
 
     class rewards( LeggedRobotCfg.rewards ):
         # /////////////////working rewards////////////////
@@ -70,9 +74,9 @@ class JAMALRoughCfg( LeggedRobotCfg ):
         soft_dof_pos_limit = 1. # percentage of urdf limits, values above this limit are penalized
         soft_dof_vel_limit = 1.
         soft_torque_limit = 1.
-        base_height_target = 0.31
+        base_height_target = 0.34
         max_contact_force = 100. # forces above this value are penalized
-        clearance_height_target = 0.1 # was-0.2
+        clearance_height_target = -0.1 # was-0.2
         class scales( LeggedRobotCfg.rewards.scales ):
             # /////////////////working rewards////////////////
             # torques = -0.0002
@@ -94,22 +98,22 @@ class JAMALRoughCfg( LeggedRobotCfg ):
             termination = -0.0
             tracking_lin_vel = 1.0
             tracking_ang_vel = 0.5
-            lin_vel_z = -0.1 # was-2
+            lin_vel_z = -1 # was-2
             ang_vel_xy = -0.05
-            orientation = -5.0 # was -0.2
+            orientation = -5.0# was -0.2
             dof_acc = -2.5e-7
             joint_power = -2e-5
-            base_height = -10.0 # was-1
-            foot_clearance = -0.01
+            base_height = -10 # was-1
+            foot_clearance = -0.04 # was -0.01
             action_rate = -0.01
             smoothness = -0.01
-            feet_air_time =  0.0
-            collision = -0.0
+            feet_air_time =  0 #was 0
+            collision = -1.0 #was 0
             feet_stumble = -0.0
-            stand_still = -0.
+            stand_still = 0.
             torques = -0.0
             dof_vel = -0.0
-            dof_pos_limits = -0.0
+            dof_pos_limits = -5.0 # was 0
             dof_vel_limits = -0.0
             torque_limits = -0.0
             

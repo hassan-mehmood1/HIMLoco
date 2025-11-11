@@ -73,8 +73,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
       velocity="8" />
   </joint>
@@ -126,8 +126,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="0 1 0" />
     <limit
-      lower="-0.5236"
-      upper="1.571"
+      lower="-1.5708"
+      upper="3.4907"
       effort="100"
       velocity="8" />
   </joint>
@@ -175,7 +175,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-2.7227"
       upper="-0.83776"
       effort="100"
-      velocity="8" />
+      velocity="20.07" />
   </joint>
   <link
     name="FL_foot">
@@ -256,8 +256,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
       velocity="8" />
   </joint>
@@ -307,8 +307,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="0 1 0" />
     <limit
-      lower="-0.5236"
-      upper="1.571"
+      lower="-1.5708"
+      upper="3.4907"
       effort="100"
       velocity="8" />
   </joint>
@@ -354,7 +354,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-2.7227"
       upper="-0.83776"
       effort="100"
-      velocity="8" />
+      velocity="20.07" />
   </joint>
   <link
     name="FR_foot">
@@ -433,8 +433,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
       velocity="8" />
   </joint>
@@ -485,7 +485,7 @@ Stephen Brawner (brawner@gmail.com)
       xyz="0 1 0" />
     <limit
       lower="-0.5236"
-      upper="1.571"
+      upper="4.5379"
       effort="100"
       velocity="8" />
   </joint>
@@ -531,7 +531,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-2.7227"
       upper="-0.83776"
       effort="100"
-      velocity="8" />
+      velocity="20.07" />
   </joint>
   <link
     name="RL_foot">
@@ -610,8 +610,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
       velocity="8" />
   </joint>
@@ -662,7 +662,7 @@ Stephen Brawner (brawner@gmail.com)
       xyz="0 1 0" />
     <limit
       lower="-0.5236"
-      upper="1.571"
+      upper="4.5379"
       effort="100"
       velocity="8" />
   </joint>
@@ -708,7 +708,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-2.7227"
       upper="-0.83776"
       effort="100"
-      velocity="8" />
+      velocity="20.07" />
   </joint>
   <link
     name="RR_foot">
