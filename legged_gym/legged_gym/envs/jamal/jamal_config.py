@@ -35,7 +35,7 @@ class JAMALRoughCfg( LeggedRobotCfg ):
         action_scale = 0.25
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
-        hip_reduction = 1.0
+        hip_reduction = 0.5 #was 1.0
 
     class asset( LeggedRobotCfg.asset ):
         # file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/go2/urdf/go2.urdf'
@@ -57,11 +57,11 @@ class JAMALRoughCfg( LeggedRobotCfg ):
             heading_command = False # if true: compute ang vel command from heading error
             
             class ranges( LeggedRobotCfg.commands.ranges):
-                lin_vel_x = [-1, 1] # min max [m/s]
-                # lin_vel_y = [-0.5, 0.5]   # min max [m/s]
-                # ang_vel_yaw = [-3.14, 3.14]    # min max [rad/s]
-                lin_vel_y = [0, 0]   # min max [m/s]
-                ang_vel_yaw = [0, 0]    # min max [rad/s]
+                lin_vel_x = [1, 1] # min max [m/s]
+                lin_vel_y = [-1, 1]   # min max [m/s]
+                ang_vel_yaw = [-3.14, 3.14]    # min max [rad/s]
+                # lin_vel_y = [0, 0]   # min max [m/s]
+                # ang_vel_yaw = [0, 0]    # min max [rad/s]
                 heading = [-3.14, 3.14]
 
     class rewards( LeggedRobotCfg.rewards ):
@@ -107,7 +107,7 @@ class JAMALRoughCfg( LeggedRobotCfg ):
             foot_clearance = -0.04 # was -0.01
             action_rate = -0.01
             smoothness = -0.01
-            feet_air_time =  0 #was 0
+            feet_air_time =  1 #was 0
             collision = -1.0 #was 0
             feet_stumble = -0.0
             stand_still = 0.

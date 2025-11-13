@@ -73,8 +73,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.43"
+      upper="0.43"
       effort="100"
       velocity="8" />
   </joint>
@@ -256,8 +256,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.43"
+      upper="0.43"
       effort="100"
       velocity="8" />
   </joint>
@@ -433,8 +433,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.43"
+      upper="0.43"
       effort="100"
       velocity="8" />
   </joint>
@@ -610,8 +610,8 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.17"
-      upper="0.17"
+      lower="-0.43"
+      upper="0.43"
       effort="100"
       velocity="8" />
   </joint>
