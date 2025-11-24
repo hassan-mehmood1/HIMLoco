@@ -54,7 +54,7 @@ class A1RoughCfg( LeggedRobotCfg ):
         # PD Drive parameters:
         control_type = 'P'
         stiffness = {'joint': 40.0}  # [N*m/rad]
-        damping = {'joint': 1.0}     # [N*m*s/rad]
+        damping = {'joint': 0.5}     # [N*m*s/rad]
         # action scale: target angle = actionScale * action + defaultAngle
         action_scale = 0.25
         # decimation: Number of control action updates @ sim DT per policy DT
@@ -112,7 +112,7 @@ class A1RoughCfg( LeggedRobotCfg ):
         soft_dof_pos_limit = 1. # percentage of urdf limits, values above this limit are penalized
         soft_dof_vel_limit = 1.
         soft_torque_limit = 1.
-        base_height_target = 0.30
+        base_height_target = 0.3
         max_contact_force = 100. # forces above this value are penalized
         clearance_height_target = -0.2
 
