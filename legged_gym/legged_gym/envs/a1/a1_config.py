@@ -53,9 +53,11 @@ class A1RoughCfg( LeggedRobotCfg ):
     class control( LeggedRobotCfg.control ):
         # PD Drive parameters:
         control_type = 'P'
-        stiffness = {'joint': 40.0}  # [N*m/rad]
-        damping = {'joint': 0.5}     # [N*m*s/rad]
-        # action scale: target angle = actionScale * action + defaultAngle
+        stiffness = {'joint': 60.0}  # [N*m/rad]
+        damping = {'joint': 1}     # [N*m*s/rad]
+
+        # stiffness = {'joint': 12.0}  # [N*m/rad]    
+        # damping = {'joint': 2}     # [N*m*s/rad]        # action scale: target angle = actionScale * action + defaultAngle
         action_scale = 0.25
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
@@ -75,6 +77,7 @@ class A1RoughCfg( LeggedRobotCfg ):
 
     class asset( LeggedRobotCfg.asset ):
         file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/a1/urdf/a1.urdf'
+        # file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/jamal/urdf/jamal.urdf'
         name = "a1"
         foot_name = "foot"
         penalize_contacts_on = ["thigh", "calf", "base"]
@@ -88,12 +91,12 @@ class A1RoughCfg( LeggedRobotCfg ):
             termination = -0.0
             tracking_lin_vel = 1.0
             tracking_ang_vel = 0.5
-            lin_vel_z = -2.0
+            lin_vel_z = -0.5
             ang_vel_xy = -0.05
             orientation = -0.2
             dof_acc = -2.5e-7
             joint_power = -2e-5
-            base_height = -1.0
+            base_height = -5.0
             foot_clearance = -0.01
             action_rate = -0.01
             smoothness = -0.01
@@ -112,7 +115,7 @@ class A1RoughCfg( LeggedRobotCfg ):
         soft_dof_pos_limit = 1. # percentage of urdf limits, values above this limit are penalized
         soft_dof_vel_limit = 1.
         soft_torque_limit = 1.
-        base_height_target = 0.3
+        base_height_target = 0.26
         max_contact_force = 100. # forces above this value are penalized
         clearance_height_target = -0.2
 

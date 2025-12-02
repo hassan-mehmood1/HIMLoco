@@ -64,10 +64,10 @@ class AlienGoRoughCfg( LeggedRobotCfg ):
     class control( LeggedRobotCfg.control ):
         # PD Drive parameters:
         control_type = 'P'
-        stiffness = {'joint': 40.0}  # [N*m/rad]
+        stiffness = {'joint': 60.0}  # [N*m/rad]
         damping = {'joint': 2.0}     # [N*m*s/rad]
         # action scale: target angle = actionScale * action + defaultAngle
-        action_scale = 0.5
+        action_scale = 0.25
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
         hip_reduction = 1.0
@@ -89,7 +89,7 @@ class AlienGoRoughCfg( LeggedRobotCfg ):
             tracking_ang_vel = 0.5
             lin_vel_z = -2.0
             ang_vel_xy = -0.05
-            orientation = -0.2
+            orientation = -0.5
             dof_acc = -2.5e-7
             joint_power = -2e-5
             base_height = -1.0
@@ -111,7 +111,7 @@ class AlienGoRoughCfg( LeggedRobotCfg ):
         soft_dof_pos_limit = 0.95 # percentage of urdf limits, values above this limit are penalized
         soft_dof_vel_limit = 0.95
         soft_torque_limit = 0.95
-        base_height_target = 0.30
+        base_height_target = 0.32
         max_contact_force = 100. # forces above this value are penalized
         clearance_height_target = -0.20
 

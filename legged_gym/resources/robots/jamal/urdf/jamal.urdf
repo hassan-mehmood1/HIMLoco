@@ -86,8 +86,9 @@ Stephen Brawner (brawner@gmail.com)
     name="imu_joint"
     type="fixed">
     <origin
-      xyz="-0.02557 0 0.04232"
+      xyz="0 0 0" 
       rpy="0 0 0" />
+      <!-- xyz="-0.02557 0 0.04232"   -->
     <parent
       link="trunk" />
     <child
@@ -137,8 +138,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-0.802851455917"
       upper="0.802851455917"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="50" />
   </joint>
   <link
     name="FR_thigh">
@@ -187,10 +188,10 @@ Stephen Brawner (brawner@gmail.com)
       xyz="0 1 0" />
     <dynamics damping="0" friction="0"/>
     <limit
-      lower="-1.0471975512v"
+      lower="-1.0471975512"
       upper="4.18879020479"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="FR_calf">
@@ -234,8 +235,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.69653369433"
       upper="-0.916297857297"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="FR_foot">
@@ -318,8 +319,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-0.802851455917"
       upper="0.802851455917"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="50" />
   </joint>
   <link
     name="FL_thigh">
@@ -372,8 +373,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-1.0471975512"
       upper="4.18879020479"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="FL_calf">
@@ -419,8 +420,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.69653369433"
       upper="-0.916297857297"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="FL_foot">
@@ -434,7 +435,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/foot.dae" />go2
+          filename="../dae/foot.dae" />
       </geometry>
       <material
         name="">
@@ -504,8 +505,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-0.802851455917"
       upper="0.802851455917"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="50" />
   </joint>
   <link
     name="RR_thigh">
@@ -556,8 +557,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-1.0471975512"
       upper="4.18879020479"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="RR_calf">
@@ -601,8 +602,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.69653369433"
       upper="-0.916297857297"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="RR_foot">
@@ -684,8 +685,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-0.802851455917"
       upper="0.802851455917"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="50" />
   </joint>
   <link
     name="RL_thigh">
@@ -736,8 +737,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-1.0471975512"
       upper="4.18879020479"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="RL_calf">
@@ -781,8 +782,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.69653369433"
       upper="-0.916297857297"
-      effort="100"
-      velocity="8" />
+      effort="33.5"
+      velocity="28" />
   </joint>
   <link
     name="RL_foot">
